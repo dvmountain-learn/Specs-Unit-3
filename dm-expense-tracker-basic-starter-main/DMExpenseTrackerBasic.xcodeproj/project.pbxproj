@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150BE3602B152F0A0099BE95 /* ExpenseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 150BE35F2B152F0A0099BE95 /* ExpenseCell.xib */; };
+		150BE3612B152F0A0099BE95 /* ExpenseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 150BE35F2B152F0A0099BE95 /* ExpenseCell.xib */; };
 		6339BF5D29D3729C000DC825 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6339BF5C29D3729C000DC825 /* ExpenseCell.swift */; };
 		6339BF5F29D391BB000DC825 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6339BF5E29D391BB000DC825 /* ExpensesViewController.swift */; };
 		6339BF6A29D39F37000DC825 /* DMExpenseTrackerBasicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6339BF6929D39F37000DC825 /* DMExpenseTrackerBasicTests.swift */; };
@@ -33,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		150BE35F2B152F0A0099BE95 /* ExpenseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseCell.xib; sourceTree = "<group>"; };
 		6339BF5C29D3729C000DC825 /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
 		6339BF5E29D391BB000DC825 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
 		6339BF6729D39F37000DC825 /* DMExpenseTrackerBasicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DMExpenseTrackerBasicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,10 +72,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150BE35A2B152EAF0099BE95 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				636B780D29D2894700330E0B /* CategoriesViewController.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		150BE35B2B152EB90099BE95 /* Expense */ = {
+			isa = PBXGroup;
+			children = (
+				6339BF5E29D391BB000DC825 /* ExpensesViewController.swift */,
+			);
+			path = Expense;
+			sourceTree = "<group>";
+		};
 		6339BF5B29D37237000DC825 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				6339BF5C29D3729C000DC825 /* ExpenseCell.swift */,
+				150BE35F2B152F0A0099BE95 /* ExpenseCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -122,8 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				636B780F29D2894700330E0B /* Main.storyboard */,
-				636B780D29D2894700330E0B /* CategoriesViewController.swift */,
-				6339BF5E29D391BB000DC825 /* ExpensesViewController.swift */,
+				150BE35A2B152EAF0099BE95 /* Category */,
+				150BE35B2B152EB90099BE95 /* Expense */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -209,7 +229,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					6339BF6629D39F37000DC825 = {
 						CreatedOnToolsVersion = 14.0;
@@ -244,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				150BE3612B152F0A0099BE95 /* ExpenseCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				150BE3602B152F0A0099BE95 /* ExpenseCell.xib in Resources */,
 				636B781629D2894800330E0B /* LaunchScreen.storyboard in Resources */,
 				636B781329D2894800330E0B /* Assets.xcassets in Resources */,
 				636B781129D2894700330E0B /* Main.storyboard in Resources */,
@@ -386,6 +408,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -446,6 +469,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

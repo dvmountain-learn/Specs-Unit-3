@@ -9,8 +9,17 @@ import UIKit
 
 class ExpenseCell: UITableViewCell {
     
-//    func set(expense: Expense) {
-//
-//    }
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectionStyle = .none
+    }
+    
+    func set(expense: Expense) {
+        titleLabel.text = expense.title
+        amountLabel.text = "$\(expense.amount)"
+    }
     
 }
