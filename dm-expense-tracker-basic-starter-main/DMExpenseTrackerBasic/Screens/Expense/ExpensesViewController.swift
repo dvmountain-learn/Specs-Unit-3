@@ -20,7 +20,7 @@ class ExpensesViewController: UIViewController {
     }
     
     func displayUILabel(_ expenses: [Expense]) -> String {
-        return "You spent $\(Expense.calculateTotalSpent(expenses: expenses)) on \(category)"
+        return "You spent \(Expense.calculateTotalSpent(expenses: expenses).currency(for: Locale(identifier: "en-US"))) on \(category)"
     }
     
     var category: String

@@ -28,12 +28,23 @@ class CategoriesViewController: UIViewController {
     private var expenses: [Expense] = []
     private var expensesByCategory: [String: [Expense]] = [:]
     private var categories: [String] = []
+    private var selectedCategory = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initializeExpenseData()
         self.configureTableView()
         self.title = "Categories"
+    }
+    
+    @IBSegueAction
+    private func showPerson(coder: NSCoder, sender: Any?, segueIdentifier: String?)
+        -> ExpensesViewController? {
+            var resultOfExpenses: [Expense] = []
+            expensesByCategory.filter({expense in expense.key == categories[selectedCategory]}).values.forEach { expenses in
+                resultOfExpenses = expenses
+            }
+        return ExpensesViewController(coder: coder, category: categories[selectedCategory], expenses: resultOfExpenses)
     }
 }
 
@@ -57,14 +68,9 @@ extension CategoriesViewController: UITableViewDataSource {
 
 extension CategoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let category = categories[indexPath.row]
-        let resultOfExpenses = expenses.filter ({ expense in expense.category == category})
-        guard let expenseVC = self.storyboard?.instantiateViewController(identifier: "ExpensesViewController", creator: { coder in
-            return ExpensesViewController(coder: coder, category: category, expenses: resultOfExpenses)
-        }) else {
-            fatalError("Could not find ExpensesViewController!")
-        }
-        self.navigationController?.pushViewController(expenseVC, animated: true)
+        selectedCategory = indexPath.row
+//        let resultOfExpenses = expenses.filter({ expense in expense.category == category})
+        performSegue(withIdentifier: "segueExpense", sender: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
