@@ -14,6 +14,7 @@ class ExpensesViewController: UIViewController {
     
     func configureViewController() {
         self.displayLabel.text = displayUILabel(self.expenses)
+        self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "ExpenseCell", bundle: nil), forCellReuseIdentifier: Constants.expenseReuseID)
         self.tableView.reloadData()
@@ -57,5 +58,11 @@ extension ExpensesViewController: UITableViewDataSource {
         cell.set(expense: expenses[indexPath.row])
         
         return cell
+    }
+}
+
+extension ExpensesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }

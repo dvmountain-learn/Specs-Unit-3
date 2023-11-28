@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" id="i09-LN-tfy"/>
                     <connections>
                         <outlet property="tableView" destination="8oT-YJ-iID" id="QkS-Ae-Ph2"/>
-                        <segue destination="9dN-le-PND" kind="show" identifier="segueExpense" destinationCreationSelector="showPersonWithCoder:sender:segueIdentifier:" id="RUc-BB-HPQ"/>
+                        <segue destination="9dN-le-PND" kind="show" identifier="segueExpense" destinationCreationSelector="showExpenseDetailWithCoder:sender:segueIdentifier:" id="RUc-BB-HPQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

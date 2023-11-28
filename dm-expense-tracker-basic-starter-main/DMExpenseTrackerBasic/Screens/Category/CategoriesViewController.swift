@@ -38,7 +38,7 @@ class CategoriesViewController: UIViewController {
     }
     
     @IBSegueAction
-    private func showPerson(coder: NSCoder, sender: Any?, segueIdentifier: String?)
+    private func showExpenseDetail(coder: NSCoder, sender: Any?, segueIdentifier: String?)
         -> ExpensesViewController? {
             var resultOfExpenses: [Expense] = []
             expensesByCategory.filter({expense in expense.key == categories[selectedCategory]}).values.forEach { expenses in
@@ -74,6 +74,6 @@ extension CategoriesViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 60
     }
 }
